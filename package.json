@@ -1,7 +1,7 @@
 {
   "name": "@aibex/ayup",
   "version": "0.0.2",
-  "description": "An easy way to test multiple yups",
+  "description": "a(ny)yup. Useful Yup helpers and functions. Synchronous and Async.",
   "homepage": "https://github.com/aibexhq/ayup",
   "author": "Aibex <oss@aibex-corp.com>",
   "license": "Apache-2.0",
@@ -13,6 +13,9 @@
   },
   "keywords": [
     "yup",
+    "validation",
+    "helpers",
+    "plugin",
     "joi"
   ],
   "main": "./cjs/index.js",
@@ -27,8 +30,8 @@
     "build": "rm -rf cjs/* && babel esm --out-dir cjs",
     "bt": "yarn build && yarn test",
     "watch": "nodemon -L --ignore cjs/ --exec yarn bt",
-    "test": "yarn build && ava",
-    "ci": "pretty-quick --check && yarn build && ava",
+    "test": "yarn build && CI=1 ava",
+    "ci": "pretty-quick --check && yarn build && CI=1 ava",
     "release": "release-it",
     "____________________": "echo \"The following sub-commands are used to serve the main commands above\"",
     "format:prettier": "pretty-quick --staged",
