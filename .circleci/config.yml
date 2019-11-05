@@ -13,7 +13,7 @@ workflows:
 # marked as a failure
 # ######################################################################
 jobs:
-  envtools:
+  ayup:
     docker:
       - image: node:10.13.0
     working_directory: ~/ayup

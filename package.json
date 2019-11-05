@@ -12,13 +12,12 @@
     "access": "public"
   },
   "keywords": [
-    "env",
-    "environment",
-    "envtools",
-    "process"
+    "yup",
+    "joi"
   ],
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
+  "browser": "./cjs/index.js",
   "browserslist": "last 2 versions, not dead, > 0.2%",
   "files": [
     "cjs/",
