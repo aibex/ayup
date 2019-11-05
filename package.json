@@ -1,0 +1,81 @@
+{
+  "name": "@aibex/ayup",
+  "version": "0.0.0",
+  "description": "An easy way to test multiple yups",
+  "homepage": "https://github.com/aibexhq/ayup",
+  "author": "Aibex <oss@aibex-corp.com>",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">= 10.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "env",
+    "environment",
+    "envtools",
+    "process"
+  ],
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "browserslist": "last 2 versions, not dead, > 0.2%",
+  "files": [
+    "cjs/",
+    "esm/"
+  ],
+  "scripts": {
+    "build": "rm -rf cjs/* && babel esm --out-dir cjs",
+    "bt": "yarn build && yarn test",
+    "watch": "nodemon -L --ignore cjs/ --exec yarn bt",
+    "test": "yarn build && ava",
+    "ci": "pretty-quick --check && yarn build && ava",
+    "release": "release-it",
+    "____________________": "echo \"The following sub-commands are used to serve the main commands above\"",
+    "format:prettier": "pretty-quick --staged",
+    "husky:precommit": "concurrently \"npm:format:*\" && yarn build && git add -A && CI=1 ava"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run husky:precommit"
+    }
+  },
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/aibexhq/ayup/issues"
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ]
+  },
+  "peerDependencies": {
+    "yup": "^0.27.0"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/runtime-corejs3": "^7.6.3",
+    "core-js": "3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/preset-env": "7.6.2",
+    "ava": "^2.4.0",
+    "concurrently": "^5.0.0",
+    "esm": "^3.2.25",
+    "husky": "^3.0.9",
+    "nodemon": "^1.19.3",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^2.0.0",
+    "release-it": "^12.4.3",
+    "yup": "^0.27.0"
+  }
+}
