@@ -39,7 +39,7 @@ import { oneOfSchema } from "@aibex/ayup";
 
 // globally add to yup
 yup.addMethod(...oneOfSchema(yup));
-yup.addMethod.apply(yup, oneOfSchema); // non-spread operator
+yup.addMethod.apply(yup, oneOfSchema(yup)); // non-spread operator
 
 const mySchema = yup.object().shape({
   myKey: yup.mixed().oneOfSchema([
