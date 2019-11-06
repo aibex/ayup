@@ -16,3 +16,17 @@ test("augment runs as expected", t => {
   });
   t.pass();
 });
+
+test("Plugin handles various types", t => {
+  const tmpl = augment(oneOfSchema(yup));
+
+  const schema = tmpl.oneOfSchema([
+    yup.string(),
+    yup.object({
+      text: yup.string(),
+    }),
+  ]);
+
+  schema.validateSync("I'm a string\nwith lines");
+  t.pass();
+});

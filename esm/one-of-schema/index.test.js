@@ -17,3 +17,14 @@ test("Plugin runs as expected", t => {
   });
   t.pass();
 });
+
+test("Plugin runs with promises", async t => {
+  const schema = yup.object().shape({
+    colors: yup
+      .mixed()
+      .oneOfSchema([yup.string(), yup.array().of(yup.string())]),
+  });
+
+  await schema.validate({ colors: "red" });
+  t.pass();
+});
