@@ -1,3 +1,5 @@
+import allSettled from "promise.allsettled";
+
 const PROMISE_OK = "fulfilled";
 
 const plugin = yup => [
@@ -16,14 +18,16 @@ const plugin = yup => [
               .length > 0
           );
         } else {
-          return Promise.allSettled(
-            schemas.map(s => s.isValid(current, options))
-          ).then(results => {
-            if (results.filter(r => r.status === PROMISE_OK).length > 0) {
-              return Promise.resolve();
-            } else {
-              return Promise.reject();
-            }
+          return new Promise((res, rej) => {
+            allSettled(schemas.map(s => s.isValid(current, options)))
+              .then(ps => {
+                if (ps.filter(r => r.status === PROMISE_OK).length > 0) {
+                  return res(true);
+                } else {
+                  return res(false);
+                }
+              })
+              .catch(e => rej(e));
           });
         }
       }
