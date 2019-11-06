@@ -1,6 +1,6 @@
 {
   "name": "@aibex/ayup",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "a(ny)yup. Useful Yup helpers and functions. Synchronous and Async.",
   "homepage": "https://github.com/aibexhq/ayup",
   "author": "Aibex <oss@aibex-corp.com>",
