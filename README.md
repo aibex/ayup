@@ -2,6 +2,8 @@
 
 a(ny)yup. Useful Yup helpers and functions. Synchronous and Async.
 
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=aibexhq/ayup)](https://dependabot.com)
+
 **Add via Yarn**
 `yarn add @aibex/ayup`
 
