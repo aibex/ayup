@@ -9,7 +9,7 @@ const plugin = yup => [
     // intentionally not a fat arrow for "this" scoping
     return this.test(
       "one-of-schema",
-      "None of the items in ${path} match an allowed schema",
+      'None of the items in "${path}" match an allowed schema',
       function(current) {
         const { sync, ...options } = this.options;
         if (sync) {
