@@ -2,6 +2,7 @@
 
 a(ny)yup. Useful Yup helpers and functions. Synchronous and Async.
 
+[![CircleCI](https://circleci.com/gh/aibexhq/ayup/tree/master.svg?style=shield)](https://circleci.com/gh/aibexhq/ayup/tree/master)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=aibexhq/ayup)](https://dependabot.com)
 
 **Add via Yarn**
