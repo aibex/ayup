@@ -76,7 +76,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn run husky:precommit",
-      "prepare-commit-msg": "exec < /dev/tty && yarn run commit:cz"
+      "prepare-commit-msg": "if [ -t 1 ] ; then yarn run commit:cz; fi"
     }
   },
   "ava": {
