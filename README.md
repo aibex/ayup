@@ -2,13 +2,16 @@
 
 a(ny)yup. Useful Yup helpers and functions. Synchronous and Async.
 
+[![CircleCI](https://circleci.com/gh/aibexhq/ayup/tree/master.svg?style=shield)](https://circleci.com/gh/aibexhq/ayup/tree/master)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=aibexhq/ayup)](https://dependabot.com)
+
 **Add via Yarn**
 `yarn add @aibex/ayup`
 
 **or via npm**
 `npm install @aibex/ayup`
 
-`ayup` is designed to be a simple way to do hard things in yup. Yup's lightweight, asynchronous, and generally a better choice for lightweight validation. _But_ some edges are _rough_. And if you're here, you're probably rubbing against one of those right now.
+`ayup` is designed to be a simple way to do hard things in yup. Yup's lightweight, asynchronous, and generally a better choice for simple validation. _But_ some edges are _rough_. And if you're here, you're probably rubbing against one of those right now.
 
 For every method, both synchronous and asynchronous support is available. By default, every plugin is ready to be added to yup via `yup.addMethod`. However, if polluting the global yup object isn't your thing, there's an `augment` method that favors yup's "template schema" approach. Examples are provided for both routes.
 
