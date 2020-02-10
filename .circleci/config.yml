@@ -15,7 +15,7 @@ workflows:
 jobs:
   ayup:
     docker:
-      - image: node:10.13.0
+      - image: node:10.18.0
     working_directory: ~/ayup
     steps:
       - checkout

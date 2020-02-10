@@ -14,7 +14,7 @@
     "url": "https://github.com/aibexhq/ayup/issues"
   },
   "engines": {
-    "node": ">= 10.0.0"
+    "node": ">=10.18.0 <11 || >=12.14.0 <13 || >=13.5.0"
   },
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
@@ -34,7 +34,7 @@
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
     "@babel/preset-env": "7.8.4",
-    "ava": "^2.4.0",
+    "ava": "^3.3.0",
     "commitizen": "^4.0.3",
     "concurrently": "^5.0.2",
     "emoji-cz": "^0.3.0",
@@ -44,6 +44,7 @@
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "release-it": "^12.4.3",
+    "standard-version": "^7.1.0",
     "yup": "^0.28.0"
   },
   "keywords": [
@@ -64,7 +65,7 @@
     "watch": "nodemon -L --ignore cjs/ --exec yarn bt",
     "test": "yarn build && CI=1 ava",
     "ci": "pretty-quick --check && yarn build && CI=1 ava",
-    "release": "release-it",
+    "release": "standard-version",
     "____________________": "echo \"The following sub-commands are used to serve the main commands above\"",
     "format:prettier": "pretty-quick --staged",
     "husky:precommit": "concurrently \"npm:format:*\" && yarn build && git add -A && CI=1 ava",
@@ -72,6 +73,27 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "standard-version": {
+    "releaseCommitMessageFormat": "❓ Chore: Release {{currentTag}}",
+    "types": [
+      {
+        "type": "✨ Feat",
+        "section": "Features"
+      },
+      {
+        "type": ":sparkles: Feat",
+        "section": "Features"
+      },
+      {
+        "type": "🐛 Fix",
+        "section": "Bug Fixes"
+      },
+      {
+        "type": ":bug: Fix",
+        "section": "Bug Fixes"
+      }
+    ]
   },
   "husky": {
     "hooks": {
