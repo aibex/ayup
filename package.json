@@ -19,6 +19,22 @@
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "browser": "./cjs/index.js",
+  "files": [
+    "cjs/",
+    "esm/"
+  ],
+  "scripts": {
+    "build": "rm -rf cjs/* && babel esm --out-dir cjs",
+    "bt": "yarn build && yarn test",
+    "watch": "nodemon -L --ignore cjs/ --exec yarn bt",
+    "test": "yarn build && CI=1 ava",
+    "ci": "pretty-quick --check && yarn build && CI=1 ava",
+    "release": "semantic-release",
+    "____________________": "echo \"The following sub-commands are used to serve the main commands above\"",
+    "format:prettier": "pretty-quick --staged",
+    "husky:precommit": "concurrently \"npm:format:*\" && yarn build && git add -A && CI=1 ava",
+    "commit:cz": "exec < /dev/tty && git-cz --hook || true"
+  },
   "peerDependencies": {
     "yup": ">0.27.0 || ^0.28.0"
   },
@@ -37,6 +53,7 @@
     "ava": "^3.3.0",
     "commitizen": "^4.0.3",
     "concurrently": "^5.0.2",
+    "conventional-changelog-conventionalcommits": "^4.2.3",
     "emoji-cz": "^0.3.0",
     "esm": "^3.2.25",
     "husky": "^4.2.1",
@@ -44,7 +61,7 @@
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "release-it": "^12.4.3",
-    "standard-version": "^7.1.0",
+    "semantic-release": "^17.0.2",
     "yup": "^0.28.0"
   },
   "keywords": [
@@ -55,45 +72,8 @@
     "joi"
   ],
   "browserslist": "last 2 versions, not dead, > 0.2%",
-  "files": [
-    "cjs/",
-    "esm/"
-  ],
-  "scripts": {
-    "build": "rm -rf cjs/* && babel esm --out-dir cjs",
-    "bt": "yarn build && yarn test",
-    "watch": "nodemon -L --ignore cjs/ --exec yarn bt",
-    "test": "yarn build && CI=1 ava",
-    "ci": "pretty-quick --check && yarn build && CI=1 ava",
-    "release": "standard-version",
-    "____________________": "echo \"The following sub-commands are used to serve the main commands above\"",
-    "format:prettier": "pretty-quick --staged",
-    "husky:precommit": "concurrently \"npm:format:*\" && yarn build && git add -A && CI=1 ava",
-    "commit:cz": "exec < /dev/tty && git-cz --hook || true"
-  },
   "publishConfig": {
     "access": "public"
-  },
-  "standard-version": {
-    "releaseCommitMessageFormat": "❓ Chore: Release {{currentTag}}",
-    "types": [
-      {
-        "type": "✨ Feat",
-        "section": "Features"
-      },
-      {
-        "type": ":sparkles: Feat",
-        "section": "Features"
-      },
-      {
-        "type": "🐛 Fix",
-        "section": "Bug Fixes"
-      },
-      {
-        "type": ":bug: Fix",
-        "section": "Bug Fixes"
-      }
-    ]
   },
   "husky": {
     "hooks": {
