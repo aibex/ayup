@@ -5,7 +5,9 @@
       "Feat": {
         "release": "minor"
       },
-      "Fix": {},
+      "Fix": {
+        "release": "patch"
+      },
       "Docs": {
         "emoji": "📝",
         "description": "Documentation only changes",
