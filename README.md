@@ -66,8 +66,8 @@ const mySchema = yup.object().shape({
 
 # Tests
 
-Test are written using `ava`. You can run the test suite using `yarn test`.
+Test are written using `ava`. You can run the test suite using `npm run test`.
 
 # Releasing
 
-While we use yarn for everything internally, `release-it` works more consistently with `npm run-script release`. This is because of how npm/yarn manage their logins.
+`npm run release` is your friend. It's not a robot, but it will help you release the right version of the code.
