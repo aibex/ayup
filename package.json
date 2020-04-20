@@ -5,12 +5,7 @@
   "homepage": "https://github.com/aibexhq/ayup",
   "repository": "https://github.com/aibexhq/ayup",
   "author": "Aibex <oss@aibex-corp.com>",
-  "licenses": [
-    {
-      "type": "Apache-2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0"
-    }
-  ],
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/aibexhq/ayup/issues"
   },
