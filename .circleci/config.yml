@@ -20,5 +20,5 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run: yarn install
-      - run: yarn ci
+      - run: npm install
+      - run: npm run ci
