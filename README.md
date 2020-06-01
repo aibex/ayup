@@ -70,4 +70,4 @@ Test are written using `ava`. You can run the test suite using `npm run test`.
 
 # Releasing
 
-`npm run release` is your friend. It's not a robot, but it will help you release the right version of the code.
+`npm run release` is your friend. Once we're consistent and stable in github, we'll set up automated channels for releasing.

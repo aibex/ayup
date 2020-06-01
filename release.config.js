@@ -6,10 +6,10 @@ const cz = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, "./.czrc")).toString()
 );
 
-const releaseRules = Object.keys(cz["emoji-cz"].types).map(type => {
+const releaseRules = Object.keys(cz["cz-emoji"].types).map(type => {
   return {
     type,
-    release: cz["emoji-cz"].types[type].release || false,
+    release: cz["cz-emoji"].types[type].release || false,
   };
 });
 
