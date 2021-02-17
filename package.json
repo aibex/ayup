@@ -58,7 +58,7 @@
     "pretty-quick": "^2.0.1",
     "release-it": "^12.4.3",
     "semantic-release": "^17.0.2",
-    "yup": "^0.28.0"
+    "yup": "^0.32.9"
   },
   "keywords": [
     "yup",
