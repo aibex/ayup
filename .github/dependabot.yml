@@ -1,0 +1,76 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  labels:
+  - dependabot
+  ignore:
+  - dependency-name: core-js
+    versions:
+    - 3.10.0
+    - 3.10.1
+    - 3.10.2
+    - 3.11.0
+    - 3.8.3
+    - 3.9.0
+    - 3.9.1
+  - dependency-name: release-it
+    versions:
+    - 14.2.2
+    - 14.3.0
+    - 14.4.0
+    - 14.4.1
+    - 14.5.0
+    - 14.5.1
+    - 14.6.0
+  - dependency-name: "@babel/preset-env"
+    versions:
+    - 7.12.11
+    - 7.12.13
+    - 7.12.16
+    - 7.12.17
+    - 7.13.0
+    - 7.13.10
+    - 7.13.12
+    - 7.13.15
+    - 7.13.5
+    - 7.13.8
+    - 7.13.9
+  - dependency-name: concurrently
+    versions:
+    - 5.3.0
+    - 6.0.0
+    - 6.0.1
+  - dependency-name: npm
+    versions:
+    - 6.14.11
+    - 6.14.12
+  - dependency-name: "@babel/plugin-transform-runtime"
+    versions:
+    - 7.12.10
+    - 7.12.13
+    - 7.12.15
+    - 7.12.17
+    - 7.13.0
+    - 7.13.1
+    - 7.13.10
+    - 7.13.2
+    - 7.13.4
+    - 7.13.5
+    - 7.13.6
+    - 7.13.7
+    - 7.13.8
+    - 7.13.9
+  - dependency-name: "@babel/plugin-proposal-object-rest-spread"
+    versions:
+    - 7.12.1
+    - 7.12.13
+    - 7.13.0
+  - dependency-name: yup
+    versions:
+    - 0.32.8
+  commit-message:
+    prefix: "⬆️ Upgrade"
